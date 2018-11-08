@@ -24,6 +24,7 @@ public class AttractorGenerator extends PApplet {
     }
 
     public void settings(){
+        //fullScreen(P3D);
         size(WIDTH, HEIGHT, P3D);
     }
 
@@ -35,7 +36,6 @@ public class AttractorGenerator extends PApplet {
     public void draw(){
         int count = 0;
         background(0);
-        // Translate position so we start in the center
 
         // This is so we can see things
         scale(5);
@@ -45,17 +45,17 @@ public class AttractorGenerator extends PApplet {
         for(Vec3d item : points){
             // Deal with the color based on count number
             if (count >= 0 && count < 3000){
-                stroke(255,0,0);
+                stroke(80, 81, 96);
                 count++;
                 point((float)item.x, (float)item.y, (float)item.z);
             }
             else if (count >= 3000 && count < 6000){
-                stroke(255);
+                stroke(174, 189, 56);
                 count++;
                 point((float)item.x, (float)item.y, (float)item.z);
             }
             else if (count >= 6000 && count < 9000){
-                stroke(0,0,255);
+                stroke(89, 130, 52);
                 count++;
                 point((float)item.x, (float)item.y, (float)item.z);
             }
@@ -69,12 +69,12 @@ public class AttractorGenerator extends PApplet {
     private static ArrayList<Vec3d> makePoints(){
 
         // Initial values:
-        float x = 2;
-        float y = 1;
-        float z = 1;
+        float x = 30;
+        float y = 15;
+        float z = 45;
 
         // Use dt to signify time distance.
-        float dt = 0.01f;
+        float dt = 0.0155f;
 
         // Store the points in an array of vectors:
         ArrayList<Vec3d> pointsToDraw = new ArrayList<>();
@@ -92,4 +92,15 @@ public class AttractorGenerator extends PApplet {
 
         return pointsToDraw;
     }
+
+// Still deciding on this one
+//
+//    public void mousePressed() {
+//        if (mouseX > 460 && mouseX < 920 & mouseY > 200 && mouseY <400) {
+//            camera.setActive(true);
+//        }
+//        else {
+//            camera.setActive(false);
+//        }
+//    }
 }
