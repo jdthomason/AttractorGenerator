@@ -15,10 +15,6 @@ public class AttractorGenerator extends PApplet {
     private static final float RHO = 28;
     private static final float SIGMA = 10;
 
-    private static float x = 1;
-    private static float y = 1;
-    private static float z = 1;
-
     public static void main (String[] args){
         PApplet.main("com.github.jdthomason.AttractorGenerator");
     }
@@ -60,7 +56,6 @@ public class AttractorGenerator extends PApplet {
                 point((float)item.x, (float)item.y, (float)item.z);
             }
             else if (count == 9000){
-                point((float)item.x, (float)item.y, (float)item.z);
                 noLoop();
             }
         }
